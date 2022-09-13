@@ -1,0 +1,51 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Colors -->
+    <color name="colorBase">#EEEEEE</color>
+    <color name="colorPrimary">#32CD32</color>
+    <color name="colorAccent">#43C6AC</color>
+    <color name="colorText">#121212</color>
+    <color name="colorTextSecondary">#292929</color>
+
+    <color name="colorPrimaryVariant">#262168</color>
+
+    <!-- Base application theme. -->
+    <style name="Theme.Intermediate" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorAccent</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <!-- Customize your theme here. -->
+        <item name="android:navigationBarColor">@color/colorBase</item>
+        <item name="backgroundColor">@color/colorBase</item>
+
+        <!-- Transition Animation -->
+        <item name="android:windowActivityTransitions">true</item>-->
+        <item name="android:windowEnterTransition">@android:transition/explode</item>
+        <item name="android:windowExitTransition">@android:transition/explode</item>
+
+        <!-- Font -->
+        <item name="android:fontFamily">@font/googlesans_regular</item>
+
+        <!-- Bottom Sheet -->
+        <item name="bottomSheetDialogTheme">@style/BottomSheetDialogTheme</item>
+    </style>
+
+    <!-- Bottom Sheet Dialog Theme -->
+    <style name="BottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_sheet_dialog</item>
+    </style>
+
+    <!-- App Bar style -->
+    <style name="expandedBarTextStyle" parent="Theme.Intermediate">
+        <item name="android:textSize">0sp</item>
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+</resources>
