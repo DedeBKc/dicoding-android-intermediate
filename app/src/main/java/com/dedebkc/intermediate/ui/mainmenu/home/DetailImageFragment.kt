@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.transition.TransitionInflater
 import com.bumptech.glide.Glide
+import com.dedebkc.intermediate.R
 import com.dedebkc.intermediate.databinding.FragmentDetailImageBinding
 
 class DetailImageFragment : DialogFragment() {
@@ -28,7 +29,7 @@ class DetailImageFragment : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+//        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         val bundle = DetailImageFragmentArgs.fromBundle(arguments as Bundle)
         val animation = TransitionInflater.from(requireContext()).inflateTransition(
@@ -40,8 +41,11 @@ class DetailImageFragment : DialogFragment() {
             .fitCenter()
             .into(binding.ivDetailImage)
 
-        sharedElementEnterTransition = animation
-        sharedElementReturnTransition = animation
+        binding.tvName.text = "${getString(R.string.name)}: ${bundle.name}"
+        binding.tvDetailDescription.text = "${getString(R.string.title_description)}: ${bundle.description}"
+
+//        sharedElementEnterTransition = animation
+//        sharedElementReturnTransition = animation
 
         binding.root.setOnClickListener { dismiss() }
     }

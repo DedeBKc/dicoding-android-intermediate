@@ -41,6 +41,14 @@
             android:name="image"
             app:argType="string"
             app:nullable="true" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="description"
+            app:argType="string"
+            app:nullable="true" />
     </dialog>
 
 </navigation>

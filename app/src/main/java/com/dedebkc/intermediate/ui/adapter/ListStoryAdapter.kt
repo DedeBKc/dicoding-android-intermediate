@@ -66,8 +66,13 @@ class ListStoryAdapter : PagingDataAdapter<StoryModel, ListStoryAdapter.ListView
             }
 
             image.setOnClickListener {
-                val toDetailImageFragment = HomeFragmentDirections.actionNavigationHomeToDetailImageFragment(story?.image)
-                val extras = FragmentNavigatorExtras(image to "detail_image")
+                val toDetailImageFragment = HomeFragmentDirections.actionNavigationHomeToDetailImageFragment(story?.image, story?.name, story?.description)
+                Log.d("DATA__", "$story")
+                val extras = FragmentNavigatorExtras(
+                    image to "detail_image",
+                    name to "detail_name",
+                    description to "detail_description"
+                )
                 root.findNavController().navigate(toDetailImageFragment, extras)
             }
         }
