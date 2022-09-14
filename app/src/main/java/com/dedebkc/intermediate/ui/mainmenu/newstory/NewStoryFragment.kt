@@ -69,7 +69,7 @@ class NewStoryFragment : Fragment() {
             findNavController().navigate(R.id.action_navigation_new_story_to_navigation_home)
         }
 
-        binding.tvUploading.setOnClickListener {
+        binding.buttonAdd.setOnClickListener {
             val description = binding.edAddDescription.text.toString()
             if (description.isNotEmpty()) {
                 loading(true)
@@ -135,12 +135,10 @@ class NewStoryFragment : Fragment() {
 
     private fun loading(isLoading: Boolean) {
         if (isLoading) {
-            binding.tvUploading.isEnabled = false
-            binding.tvUploading.visibility = View.VISIBLE
+            binding.buttonAdd.isEnabled = false
             binding.progressBar.visibility = View.VISIBLE
         } else {
-            binding.tvUploading.isEnabled = true
-            binding.tvUploading.visibility = View.GONE
+            binding.buttonAdd.isEnabled = true
             binding.progressBar.visibility = View.GONE
         }
     }
@@ -158,7 +156,7 @@ class NewStoryFragment : Fragment() {
                 isBackCamera
             )
 
-            binding.tvUploading.isEnabled = true
+            binding.buttonAdd.isEnabled = true
             binding.previewImage.setImageBitmap(result)
         }
     }
@@ -181,7 +179,7 @@ class NewStoryFragment : Fragment() {
 
             getFile = myFile
 
-            binding.tvUploading.isEnabled = true
+            binding.buttonAdd.isEnabled = true
             binding.previewImage.setImageURI(selectedImg)
         }
     }
