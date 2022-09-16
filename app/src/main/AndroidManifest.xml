@@ -6,6 +6,9 @@
     <uses-feature android:name="android.hardware.camera" />
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,6 +17,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Intermediate">
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyB7dvuXhiAAKvjOzN8-0iDoOnCBKgNZHmQ" />
+
+        <activity
+            android:name=".ui.mapmenu.MapActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.mainmenu.MainActivity"
+            android:label="@string/title_activity_map_view_story" />
         <activity
             android:name="com.dedebkc.intermediate.ui.mainmenu.newstory.CameraActivity"
             android:exported="false" />

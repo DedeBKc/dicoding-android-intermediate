@@ -10,6 +10,8 @@ import com.dedebkc.intermediate.data.network.ApiService
 import com.dedebkc.intermediate.data.network.UserResponse
 import com.dedebkc.intermediate.data.paging.StoryRemoteMediator
 import com.dedebkc.intermediate.model.StoryModel
+import com.dedebkc.intermediate.ui.mapmenu.MapStyle
+import com.dedebkc.intermediate.ui.mapmenu.MapType
 import com.dedebkc.intermediate.utils.ApiInterceptor
 import com.dedebkc.intermediate.utils.AppExecutors
 import okhttp3.MultipartBody
@@ -42,6 +44,12 @@ class UserRepository(
     suspend fun saveIsFirstTime(value: Boolean) = pref.saveIsFirstTime(value)
 
     suspend fun clearCache() = pref.clearCache()
+
+    fun getMapType() : LiveData<MapType> = pref.getMapType().asLiveData()
+    suspend fun saveMapType(value: MapType) = pref.saveMapType(value)
+
+    fun getMapStyle() : LiveData<MapStyle> = pref.getMapStyle().asLiveData()
+    suspend fun saveMapStyle(value: MapStyle) = pref.saveMapStyle(value)
 
     /**
      * Access data from API (Retrofit)

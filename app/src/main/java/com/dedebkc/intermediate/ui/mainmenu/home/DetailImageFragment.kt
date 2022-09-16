@@ -41,8 +41,8 @@ class DetailImageFragment : DialogFragment() {
             .fitCenter()
             .into(binding.ivDetailImage)
 
-        binding.tvName.text = "${getString(R.string.name)}: ${bundle.name}"
-        binding.tvDetailDescription.text = "${getString(R.string.title_description)}: ${bundle.description}"
+//        binding.tvName.text = "${getString(R.string.name)}: ${bundle.name}"
+//        binding.tvDetailDescription.text = "${getString(R.string.title_description)}: ${bundle.description}"
 
 //        sharedElementEnterTransition = animation
 //        sharedElementReturnTransition = animation

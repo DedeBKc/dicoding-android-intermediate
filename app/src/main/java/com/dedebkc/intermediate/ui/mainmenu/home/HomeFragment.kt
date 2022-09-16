@@ -1,6 +1,7 @@
 package com.dedebkc.intermediate.ui.mainmenu.home
 
 import android.animation.ObjectAnimator
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -15,6 +16,7 @@ import com.dedebkc.intermediate.ui.adapter.ListStoryAdapter
 import com.dedebkc.intermediate.ui.ViewModelFactory
 import com.dedebkc.intermediate.databinding.FragmentHomeBinding
 import com.dedebkc.intermediate.ui.adapter.LoadingStateListStoryAdapter
+import com.dedebkc.intermediate.ui.mapmenu.MapActivity
 
 class HomeFragment : Fragment() {
     private lateinit var factory: ViewModelFactory
@@ -39,6 +41,11 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.mapMenu.setOnClickListener {
+            Log.d("CLICK", "CLICK ME!!")
+            startActivity(Intent(activity, MapActivity::class.java))
+        }
 
         factory = ViewModelFactory.getInstance(requireActivity())
 

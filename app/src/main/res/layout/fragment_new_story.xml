@@ -66,13 +66,14 @@
         <EditText
             android:id="@+id/ed_add_description"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_margin="16dp"
             android:ems="10"
             android:gravity="start|top"
             android:hint="@string/title_description"
             android:importantForAutofill="no"
             android:inputType="textMultiLine"
+            app:layout_constraintBottom_toTopOf="@+id/cb_share_loc"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/preview_image"
@@ -110,6 +111,15 @@
                 android:textColor="@color/colorBase"
                 tools:ignore="ButtonStyle" />
         </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/cb_share_loc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/cb_share_location"
+            app:layout_constraintBottom_toTopOf="@+id/button_add"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout" />
 
         <Button
             android:id="@+id/button_add"
